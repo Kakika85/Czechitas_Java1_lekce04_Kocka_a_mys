@@ -1,0 +1,28 @@
+plugins {
+    id 'application'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://mvnrepo.czechitas.dev/maven2/"
+    }
+}
+
+dependencies {
+    implementation("dev.czechitas.java1:kockamyssyr-engine:1.0.0")
+}
+
+application {
+    mainClass = "cz.czechitas.kockamyssyr.HlavniProgram"
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
